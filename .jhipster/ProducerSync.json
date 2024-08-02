@@ -1,0 +1,30 @@
+{
+  "annotations": {
+    "changelogDate": "20240802035135"
+  },
+  "clientRootFolder": "kafkaDemoConsumer",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "ownerName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "producerName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "quantity",
+      "fieldType": "Integer"
+    }
+  ],
+  "jpaMetamodelFiltering": false,
+  "microserviceName": "kafkaDemoConsumer",
+  "name": "ProducerSync",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}
