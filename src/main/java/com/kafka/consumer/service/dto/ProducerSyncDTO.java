@@ -13,7 +13,7 @@ public class ProducerSyncDTO implements Serializable {
 
     private String ownerName;
 
-    private String producerName;
+    private String productName;
 
     private Integer quantity;
 
@@ -33,12 +33,12 @@ public class ProducerSyncDTO implements Serializable {
         this.ownerName = ownerName;
     }
 
-    public String getProducerName() {
-        return producerName;
+    public String getProductName() {
+        return productName;
     }
 
-    public void setProducerName(String producerName) {
-        this.producerName = producerName;
+    public void setProductName(String producerName) {
+        this.productName = producerName;
     }
 
     public Integer getQuantity() {
@@ -76,7 +76,7 @@ public class ProducerSyncDTO implements Serializable {
         return "ProducerSyncDTO{" +
             "id=" + getId() +
             ", ownerName='" + getOwnerName() + "'" +
-            ", producerName='" + getProducerName() + "'" +
+            ", producerName='" + getProductName() + "'" +
             ", quantity=" + getQuantity() +
             "}";
     }

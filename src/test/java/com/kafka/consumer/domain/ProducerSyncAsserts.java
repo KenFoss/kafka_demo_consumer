@@ -48,7 +48,7 @@ public class ProducerSyncAsserts {
         assertThat(expected)
             .as("Verify ProducerSync relevant properties")
             .satisfies(e -> assertThat(e.getOwnerName()).as("check ownerName").isEqualTo(actual.getOwnerName()))
-            .satisfies(e -> assertThat(e.getProducerName()).as("check producerName").isEqualTo(actual.getProducerName()))
+            .satisfies(e -> assertThat(e.getProductName()).as("check producerName").isEqualTo(actual.getProductName()))
             .satisfies(e -> assertThat(e.getQuantity()).as("check quantity").isEqualTo(actual.getQuantity()));
     }
 

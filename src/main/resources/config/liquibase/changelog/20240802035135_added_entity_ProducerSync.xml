@@ -50,4 +50,8 @@
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
         </loadData>
     </changeSet>
+
+    <changeSet id="20240802-00" author="ken.foss">
+        <renameColumn tableName="producer_sync" oldColumnName="producer_name" newColumnName="product_name" columnDataType="varchar(255)"/>
+    </changeSet>
 </databaseChangeLog>

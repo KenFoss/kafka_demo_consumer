@@ -21,8 +21,8 @@ public class ProducerSync implements Serializable {
     @Column(name = "owner_name")
     private String ownerName;
 
-    @Column(name = "producer_name")
-    private String producerName;
+    @Column(name = "product_name")
+    private String productName;
 
     @Column(name = "quantity")
     private Integer quantity;
@@ -55,17 +55,17 @@ public class ProducerSync implements Serializable {
         this.ownerName = ownerName;
     }
 
-    public String getProducerName() {
-        return this.producerName;
+    public String getProductName() {
+        return this.productName;
     }
 
-    public ProducerSync producerName(String producerName) {
-        this.setProducerName(producerName);
+    public ProducerSync producerName(String productName) {
+        this.setProductName(productName);
         return this;
     }
 
-    public void setProducerName(String producerName) {
-        this.producerName = producerName;
+    public void setProductName(String productName) {
+        this.productName = productName;
     }
 
     public Integer getQuantity() {
@@ -106,7 +106,7 @@ public class ProducerSync implements Serializable {
         return "ProducerSync{" +
             "id=" + getId() +
             ", ownerName='" + getOwnerName() + "'" +
-            ", producerName='" + getProducerName() + "'" +
+            ", producerName='" + getProductName() + "'" +
             ", quantity=" + getQuantity() +
             "}";
     }
