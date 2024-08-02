@@ -81,36 +81,36 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-            <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-api</artifactId>
-                <version>2.0.13</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.logging.log4j</groupId>
-                <artifactId>log4j-api</artifactId>
-                <version>2.23.1</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.logging.log4j</groupId>
-                <artifactId>log4j-to-slf4j</artifactId>
-                <version>2.23.1</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.commons</groupId>
-                <artifactId>commons-compress</artifactId>
-                <version>1.25.0</version>
-            </dependency>
-            <dependency>
-                <groupId>org.xerial.snappy</groupId>
-                <artifactId>snappy-java</artifactId>
-                <version>1.1.10.5</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.zookeeper</groupId>
-                <artifactId>zookeeper</artifactId>
-                <version>3.4.10</version>
-            </dependency>
+<!--            <dependency>-->
+<!--                <groupId>org.slf4j</groupId>-->
+<!--                <artifactId>slf4j-api</artifactId>-->
+<!--                <version>2.0.13</version>-->
+<!--            </dependency>-->
+<!--            <dependency>-->
+<!--                <groupId>org.apache.logging.log4j</groupId>-->
+<!--                <artifactId>log4j-api</artifactId>-->
+<!--                <version>2.23.1</version>-->
+<!--            </dependency>-->
+<!--            <dependency>-->
+<!--                <groupId>org.apache.logging.log4j</groupId>-->
+<!--                <artifactId>log4j-to-slf4j</artifactId>-->
+<!--                <version>2.23.1</version>-->
+<!--            </dependency>-->
+<!--            <dependency>-->
+<!--                <groupId>org.apache.commons</groupId>-->
+<!--                <artifactId>commons-compress</artifactId>-->
+<!--                <version>1.25.0</version>-->
+<!--            </dependency>-->
+<!--            <dependency>-->
+<!--                <groupId>org.xerial.snappy</groupId>-->
+<!--                <artifactId>snappy-java</artifactId>-->
+<!--                <version>1.1.10.5</version>-->
+<!--            </dependency>-->
+<!--            <dependency>-->
+<!--                <groupId>org.apache.zookeeper</groupId>-->
+<!--                <artifactId>zookeeper</artifactId>-->
+<!--                <version>3.4.10</version>-->
+<!--            </dependency>-->
         </dependencies>
     </dependencyManagement>
 
@@ -408,6 +408,26 @@
             <plugin>
                 <groupId>org.sonarsource.scanner.maven</groupId>
                 <artifactId>sonar-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.avro</groupId>
+                <artifactId>avro-maven-plugin</artifactId>
+                <version>1.8.2</version>
+                <executions>
+                    <execution>
+                        <id>schemas</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>schema</goal>
+                            <goal>protocol</goal>
+                            <goal>idl-protocol</goal>
+                        </goals>
+                        <configuration>
+                            <sourceDirectory>${project.basedir}/src/main/resources/</sourceDirectory>
+                            <outputDirectory>${project.basedir}/src/main/java/</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
         <pluginManagement>
@@ -839,26 +859,6 @@
                     <groupId>org.sonarsource.scanner.maven</groupId>
                     <artifactId>sonar-maven-plugin</artifactId>
                     <version>${sonar-maven-plugin.version}</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.avro</groupId>
-                    <artifactId>avro-maven-plugin</artifactId>
-                    <version>1.8.2</version>
-                    <executions>
-                        <execution>
-                            <id>schemas</id>
-                            <phase>generate-sources</phase>
-                            <goals>
-                                <goal>schema</goal>
-                                <goal>protocol</goal>
-                                <goal>idl-protocol</goal>
-                            </goals>
-                            <configuration>
-                                <sourceDirectory>${project.basedir}/src/main/resources/</sourceDirectory>
-                                <outputDirectory>${project.basedir}/src/main/java/</outputDirectory>
-                            </configuration>
-                        </execution>
-                    </executions>
                 </plugin>
             </plugins>
         </pluginManagement>
