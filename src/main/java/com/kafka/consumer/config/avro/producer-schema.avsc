@@ -1,7 +1,7 @@
 {
     "type": "record",
     "name": "ProducerSync",
-    "namespace": "com.kafka.consumer",
+    "namespace": "com.demo.kafka.config.avro.record",
     "fields": [
         {
             "name": "id",

@@ -21,6 +21,7 @@ logging:
     #    com.kafka.consumer: DEBUG
     #    org.apache.kafka: DEBUG
     #    org.springframework.kafka: DEBUG
+    io.confluent.kafka: DEBUG
     org.springframework.security: DEBUG
 
 management:
@@ -70,6 +71,8 @@ spring:
       properties:
         schema.registry.url: http://localhost:8085
         specific.avro.reader: true
+      #        specific.avro.package: com.kafka.consumer.config.avro.record
+      bootstrap-servers: localhost:19092
     cloud:
       stream:
         kafka:
