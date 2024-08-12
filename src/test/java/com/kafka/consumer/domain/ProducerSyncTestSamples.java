@@ -12,18 +12,18 @@ public class ProducerSyncTestSamples {
     private static final AtomicInteger intCount = new AtomicInteger(random.nextInt() + (2 * Short.MAX_VALUE));
 
     public static ProducerSync getProducerSyncSample1() {
-        return new ProducerSync().id(1L).ownerName("ownerName1").producerName("producerName1").quantity(1);
+        return new ProducerSync().id(1L).ownerName("ownerName1").productName("producerName1").quantity(1);
     }
 
     public static ProducerSync getProducerSyncSample2() {
-        return new ProducerSync().id(2L).ownerName("ownerName2").producerName("producerName2").quantity(2);
+        return new ProducerSync().id(2L).ownerName("ownerName2").productName("producerName2").quantity(2);
     }
 
     public static ProducerSync getProducerSyncRandomSampleGenerator() {
         return new ProducerSync()
             .id(longCount.incrementAndGet())
             .ownerName(UUID.randomUUID().toString())
-            .producerName(UUID.randomUUID().toString())
+            .productName(UUID.randomUUID().toString())
             .quantity(intCount.incrementAndGet());
     }
 }
