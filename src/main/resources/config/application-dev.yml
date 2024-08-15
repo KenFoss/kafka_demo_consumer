@@ -18,9 +18,10 @@ logging:
     ROOT: DEBUG
     tech.jhipster: DEBUG
     org.hibernate.SQL: DEBUG
-    com.kafka.consumer: DEBUG
-    org.apache.kafka: DEBUG
-    org.springframework.kafka: DEBUG
+    #    com.kafka.consumer: DEBUG
+    #    org.apache.kafka: DEBUG
+    #    org.springframework.kafka: DEBUG
+    io.confluent.kafka: DEBUG
     org.springframework.security: DEBUG
 
 management:
@@ -43,7 +44,7 @@ spring:
       indent-output: true
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:mysql://localhost:3306/kafkaDemoConsumer?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&createDatabaseIfNotExist=true
+    url: jdbc:mysql://localhost:3306/kafkaDemoConsumer?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true
     username: root
     password: root
     hikari:
@@ -70,6 +71,8 @@ spring:
       properties:
         schema.registry.url: http://localhost:8085
         specific.avro.reader: true
+      #        specific.avro.package: com.kafka.consumer.config.avro.record
+      bootstrap-servers: localhost:19092
     cloud:
       stream:
         kafka:

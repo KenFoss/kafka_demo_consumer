@@ -59,7 +59,7 @@ public class ProducerSync implements Serializable {
         return this.productName;
     }
 
-    public ProducerSync producerName(String productName) {
+    public ProducerSync productName(String productName) {
         this.setProductName(productName);
         return this;
     }

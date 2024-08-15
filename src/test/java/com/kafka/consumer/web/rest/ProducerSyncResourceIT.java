@@ -77,7 +77,7 @@ class ProducerSyncResourceIT {
     public static ProducerSync createEntity(EntityManager em) {
         ProducerSync producerSync = new ProducerSync()
             .ownerName(DEFAULT_OWNER_NAME)
-            .producerName(DEFAULT_PRODUCER_NAME)
+            .productName(DEFAULT_PRODUCER_NAME)
             .quantity(DEFAULT_QUANTITY);
         return producerSync;
     }
@@ -91,7 +91,7 @@ class ProducerSyncResourceIT {
     public static ProducerSync createUpdatedEntity(EntityManager em) {
         ProducerSync producerSync = new ProducerSync()
             .ownerName(UPDATED_OWNER_NAME)
-            .producerName(UPDATED_PRODUCER_NAME)
+            .productName(UPDATED_PRODUCER_NAME)
             .quantity(UPDATED_QUANTITY);
         return producerSync;
     }
@@ -204,7 +204,7 @@ class ProducerSyncResourceIT {
         ProducerSync updatedProducerSync = producerSyncRepository.findById(producerSync.getId()).orElseThrow();
         // Disconnect from session so that the updates on updatedProducerSync are not directly saved in db
         em.detach(updatedProducerSync);
-        updatedProducerSync.ownerName(UPDATED_OWNER_NAME).producerName(UPDATED_PRODUCER_NAME).quantity(UPDATED_QUANTITY);
+        updatedProducerSync.ownerName(UPDATED_OWNER_NAME).productName(UPDATED_PRODUCER_NAME).quantity(UPDATED_QUANTITY);
         ProducerSyncDTO producerSyncDTO = producerSyncMapper.toDto(updatedProducerSync);
 
         restProducerSyncMockMvc
@@ -294,7 +294,7 @@ class ProducerSyncResourceIT {
         ProducerSync partialUpdatedProducerSync = new ProducerSync();
         partialUpdatedProducerSync.setId(producerSync.getId());
 
-        partialUpdatedProducerSync.ownerName(UPDATED_OWNER_NAME).producerName(UPDATED_PRODUCER_NAME).quantity(UPDATED_QUANTITY);
+        partialUpdatedProducerSync.ownerName(UPDATED_OWNER_NAME).productName(UPDATED_PRODUCER_NAME).quantity(UPDATED_QUANTITY);
 
         restProducerSyncMockMvc
             .perform(
@@ -325,7 +325,7 @@ class ProducerSyncResourceIT {
         ProducerSync partialUpdatedProducerSync = new ProducerSync();
         partialUpdatedProducerSync.setId(producerSync.getId());
 
-        partialUpdatedProducerSync.ownerName(UPDATED_OWNER_NAME).producerName(UPDATED_PRODUCER_NAME).quantity(UPDATED_QUANTITY);
+        partialUpdatedProducerSync.ownerName(UPDATED_OWNER_NAME).productName(UPDATED_PRODUCER_NAME).quantity(UPDATED_QUANTITY);
 
         restProducerSyncMockMvc
             .perform(
