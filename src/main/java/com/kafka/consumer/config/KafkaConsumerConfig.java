@@ -1,4 +1,4 @@
-package com.kafka.consumer.config.listener;
+package com.kafka.consumer.config;
 
 import com.demo.schema.record.AvroProducerSync;
 import io.confluent.kafka.serializers.KafkaAvroDeserializer;
@@ -19,7 +19,7 @@ import org.springframework.kafka.listener.ConcurrentMessageListenerContainer;
 
 @EnableKafka
 @Configuration
-public class KafkaConsumerListenerConfig {
+public class KafkaConsumerConfig {
 
     @Value(value = "${spring.kafka.consumer.bootstrap-servers}")
     private String bootstrapAddress;
